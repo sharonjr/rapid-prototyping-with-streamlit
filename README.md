@@ -1,4 +1,4 @@
-# DLAI Standard Course Template and Best Practices
+# Rapid Prototyping of Generative AI Apps with Streamlit
 
 This repo contains the standard template for creating our course repos. Aside from the layout, it also contains assignment templates, READMEs, and other files that will help organize our course materials. 
 
