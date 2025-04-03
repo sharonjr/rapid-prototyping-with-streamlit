@@ -13,3 +13,7 @@ Here, we're leveraging Snowflake Cortex to perform the following data processing
 ## Data Visualization
 
 Next, we'll use the structured data to create a bar chart to visualize the daily sentiment score and the product sentiment score.
+
+## Running the Notebook
+
+Download the Notebook in `IPYNB` format and upload it to your Snowflake Snowsight account to run the Snowflake Notebook.
