@@ -33,7 +33,7 @@ or chat history, answer naturally. Do not explicitly mention "based on the conte
 Answer:
 ```
 
-## Creating this App in Snowflake
+## Creating this Streamlit App in Snowflake
 - **Step 1.** Log in to Snowflake Snowsight
 
 Approach 1:
