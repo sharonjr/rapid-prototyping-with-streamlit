@@ -6,6 +6,8 @@ In this lab, we'll prepare the Avalanche data namely the Customer Reviews subset
 
 Follow the instructions provided in `setup.sql` to create a database, schema, stage as well as upload files for the Avalanche data.
 
+Once this is completed, the Avalanche data can be accessed from the `@avalanche.customer_reviews;` stage directly.
+
 ## Data Processing
 
 Here, we're leveraging Snowflake Cortex to perform the following data processing tasks:
