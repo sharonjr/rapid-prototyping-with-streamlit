@@ -8,6 +8,7 @@ In this lab, we'll build a chatbot to answer questions about structured data usi
 Approach 1:
 
 2A. In the left sidebar, click on Projects > Streamlit to bring up the Streamlit workspace
+
 2B. In the top-right corner, click on "+ Streamlit App" to create a Streamlit app.
 
 Approach 2:
