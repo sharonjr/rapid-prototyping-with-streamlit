@@ -15,6 +15,7 @@ Approach 2:
 - Step 2. In the left sidebar, click on + "Create" > "Streamlit App"
 
 - Step 3. A "Create Streamlit App" modal window pops up. Enter the following:
+
  -- App title
  -- App location: choose database and choose schema
  -- App warehouse
