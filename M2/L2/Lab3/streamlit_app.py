@@ -97,6 +97,7 @@ def make_chat_history_summary(chat_history, question):
         <chat_history>
         {chat_history}
         </chat_history>
+        
         <question>
         {question}
         </question>
