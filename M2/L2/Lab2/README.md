@@ -13,7 +13,7 @@ Approach 1:
 
 Approach 2:
 
-2. In the left sidebar, click on + Create > "Streamlit App"
+2. In the left sidebar, click on + "Create" > "Streamlit App"
 
 3. A "Create Streamlit App" modal window pops up. Enter the following:
 - App title
