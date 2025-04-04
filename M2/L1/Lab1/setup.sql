@@ -12,3 +12,11 @@ CREATE STAGE IF NOT EXISTS avalanche.customer_reviews
   
 -- List the contents of the newly created stage
 ls @avalanche.customer_reviews;
+
+-- Read single file
+SELECT
+  SNOWFLAKE.CORTEX.PARSE_DOCUMENT(
+    @avalanche.customer_reviews,
+    'review-01.docx',
+    {'mode': 'layout'}
+  ) AS layout;
