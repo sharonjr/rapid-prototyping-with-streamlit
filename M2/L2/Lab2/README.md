@@ -2,6 +2,10 @@
 
 In this lab, we'll build a chatbot to answer questions about structured data using advanced prompting.
 
+## Setup
+
+We'll export the processed data from M2 L1 Lab 1 and load that into a new table `AVALANCHE.PUBLIC.CUSTOMER_REVIEWS` that we'll use in this lab.
+
 ## Augmenting our Prompt with Data
 
 We're converting a Pandas DataFrame into strings by appending the `.to_string()` method to the DataFrame variable. 
