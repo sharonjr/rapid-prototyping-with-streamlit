@@ -8,6 +8,22 @@ Follow the instructions provided in `setup.sql` to create a database, schema, st
 
 Once this is completed, the Avalanche data can be accessed from the `@avalanche.customer_reviews;` stage directly.
 
+For example, to list contents of the stage run this SQL query:
+```
+ls @avalanche.customer_reviews;
+```
+
+To read contents of a file:
+```
+-- Read single file
+SELECT
+  SNOWFLAKE.CORTEX.PARSE_DOCUMENT(
+    @avalanche.customer_reviews,
+    'review-01.docx',
+    {'mode': 'layout'}
+  ) AS layout;
+```
+
 ## Data Processing
 
 Here, we're leveraging Snowflake Cortex to perform the following data processing tasks:
