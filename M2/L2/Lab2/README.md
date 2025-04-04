@@ -15,9 +15,9 @@ Approach 2:
 - Step 2. In the left sidebar, click on + "Create" > "Streamlit App"
 
 - Step 3. A "Create Streamlit App" modal window pops up. Enter the following:
- - App title
- - App location: choose database and choose schema
- - App warehouse
+ -- App title
+ -- App location: choose database and choose schema
+ -- App warehouse
 
 - Step 4. An example Streamlit app should appear
 - Step 5. Paste the code content from the `streamlit_app.py` in this sub-directory into the left code editor panel.
