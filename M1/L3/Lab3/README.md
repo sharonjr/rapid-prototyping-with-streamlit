@@ -4,21 +4,24 @@ In this lab, we'll build a simple Gen AI app using LLM models from Snowflake Cor
 
 We'll start off with a simple app with as minimal number of lines. Next, we'll expand the app with additional features in our iterations as also reflected by the file names `iteration_1.py`, `iteration_2.py`, etc.
 
-## Install prerequisite libraries
-To follow along, make sure that you have all the prerequisite libraries installed. For your convenience, a list of this is provided in the `requirements.txt` file.
 
-You can also install them via `pip` as follows:
-```
-pip install -r requirements.txt
-```
+## Creating this Streamlit App in Snowflake
+- **Step 1.** Log in to Snowflake Snowsight
 
-## Run apps
+Approach 1:
 
-To run Streamlit apps mentioned herein, you can use `streamlit run` followed by the `.py` script file name of choice.
+- **Step 2A.** In the left sidebar, click on "Projects" > "Streamlit" to bring up the Streamlit workspace
+- **Step 2B.** In the top-right corner, click on "+ Streamlit App" to create a Streamlit app.
 
-For example, if you want to run the `iteration_1.py` app, enter the following into the terminal:
-```
-streamlit run iteration_1.py
-```
+Approach 2:
 
-and so forth.
+- **Step 2.** In the left sidebar, click on + "Create" > "Streamlit App"
+
+- **Step 3.** A "Create Streamlit App" modal window pops up. Enter the following:
+
+  - App title
+  - App location: choose database and choose schema
+  - App warehouse
+
+- **Step 4.** An example Streamlit app should appear
+- **Step 5.** Paste the code content from the `streamlit_app.py` in this sub-directory into the left code editor panel.
