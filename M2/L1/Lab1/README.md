@@ -2,6 +2,10 @@
 
 In this lab, we'll prepare the Avalanche data namely the Customer Reviews subset from an unstructured format to a structured format in a Snowflake Notebooks.
 
+## Setup
+
+Follow the instructions provided in `setup.sql` to create a database, schema, stage as well as upload files for the Avalanche data.
+
 ## Data Processing
 
 Here, we're leveraging Snowflake Cortex to perform the following data processing tasks:
