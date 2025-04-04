@@ -114,6 +114,7 @@ or chat history, answer naturally. Do not explicitly mention "based on the conte
 {user_question}
 </question>
 [/INST]
+
 Answer:
 """
     prompt = prompt_template.strip()
