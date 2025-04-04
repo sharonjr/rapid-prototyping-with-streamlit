@@ -179,7 +179,7 @@ def main():
         "service_metadata" not in st.session_state
         or len(st.session_state.service_metadata) == 0
     )
-    if question := st.chat_input("Any goggles review?", disabled=disable_chat):
+    if question := st.chat_input("Are there any goggles review?", disabled=disable_chat):
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": question})
         # Display user message in chat message container
