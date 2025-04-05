@@ -2,6 +2,8 @@
 
 In this lab, we'll build a chatbot to answer questions about structured data using advanced prompting.
 
+You can think of this as a RAG chatbot over structured data; with the caveat that we're not using vector embeddings and vector databases; instead we're applying the string version of the DataFrame as context directly in the prompt.
+
 ## Setup
 
 We'll export the processed data from M2 L1 Lab 1 and load that into a new table `AVALANCHE.PUBLIC.CUSTOMER_REVIEWS` that we'll use in this lab.
