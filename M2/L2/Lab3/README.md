@@ -1,6 +1,6 @@
 # M2 L2 Lab3
 
-In this lab, we'll setting up our RAG pipeline using Cortex Search.
+In this lab, we're setting up the RAG pipeline using Cortex Search.
 
 ## Running the Notebook
 
