@@ -1,4 +1,4 @@
-# M2 L2 Lab 3
+# M2 L2 Lab 4
 
 In this lab, we'll build a RAG chatbot to answer questions about unstructured data (*i.e.* content from DOCX files). 
 
