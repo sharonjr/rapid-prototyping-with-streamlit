@@ -1,3 +1,5 @@
 # M2 L2 Lab 3
 
-In this lab, we'll build a RAG chatbot to answer questions about unstructured data. The RAG pipeline is handled by Cortex Search.
+In this lab, we'll build a RAG chatbot to answer questions about unstructured data (*i.e.* content from DOCX files). 
+
+The RAG pipeline is handled by Cortex Search where the target *chunk size* and *chunk overlap* in characters were set to 1800 and 250, respectively.
