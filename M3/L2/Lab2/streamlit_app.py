@@ -1,6 +1,11 @@
+# M3 L2 Lab2
 import streamlit as st
 import altair as alt
 import pandas as pd
+# from snowflake.snowpark.context import get_active_session
+
+# Get the current credentials
+# session = get_active_session()
 
 st.set_page_config(page_title="Avalanche Data Set",
                     page_icon="🏔️",
@@ -8,6 +13,7 @@ st.set_page_config(page_title="Avalanche Data Set",
 
 st.title("🏔️ Avalanche Data Set")
 
+# df = session.sql("SELECT * FROM AVALANCHE.PUBLIC.CUSTOMER_REVIEWS").to_pandas()
 df = pd.read_csv("data/customer_reviews.csv")
 
 # Ensure SENTIMENT_SCORE is numeric
