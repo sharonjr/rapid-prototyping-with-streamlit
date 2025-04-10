@@ -10,7 +10,7 @@ This repo contains the lab materials for the course. This may include assets suc
     - [M1 L2 Lab 2](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M1/L2/Lab2)
   - Lesson 3
     - [M1 L3 Lab 3](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M1/L3/Lab3)
-    - [V2](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M1/L3/V2)
+    - [M1 L3 V2](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M1/L3/V2)
 
     
 ---
