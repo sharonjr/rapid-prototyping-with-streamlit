@@ -3,7 +3,7 @@
 This repo contains the lab materials for the course. This may include assets such as data, code scripts and Jupyter notebooks.
 
 ## Table of Contents
-- Module 1 - Introduction
+- **Module 1** - Introduction
   - Lesson 1 - Introduction to Prototyping for Generative AI Apps
     - [M1 L1 Lab 1](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M1/L1/Lab1)
   - Lesson 2 - Getting Started with Streamlit for Rapid Prototyping
@@ -11,14 +11,14 @@ This repo contains the lab materials for the course. This may include assets suc
   - Lesson 3 - Streamlit on Snowflake
     - [M1 L3 Lab 3](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M1/L3/Lab3)
     - [M1 L3 V2](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M1/L3/V2)
-- Module 2 - Rapid Prototyping with Streamlit on Snowflake
+- **Module 2** - Rapid Prototyping with Streamlit on Snowflake
   - Lesson 1 - Building Data Apps on Snowflake
     - [M2 L1 Lab 1](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M2/L1/Lab1)
   - Lesson 2 - Improving Your Responses with RAG
     - [M2 L2 Lab 2](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M2/L2/Lab2)
     - [M2 L2 Lab 3](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M2/L2/Lab3)
     - [M2 L2 Lab 4](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M2/L2/Lab4)
-- Module 3 - Deploying Prototypes for Feedback
+- **Module 3** - Deploying Prototypes for Feedback
   - Lesson 1 - Deploying your Prototype
     - [L3 L1 Lab 1](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M3/L1/Lab1)
   - Lesson 2 - Iterative Improvement
