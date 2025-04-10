@@ -18,8 +18,9 @@ This repo contains the lab materials for the course. This may include assets suc
     - [M2 L2 Lab 3](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M2/L2/Lab3)
     - [M2 L2 Lab 4](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M2/L2/Lab4)
 - Module 3
-
-
+  - Lesson 1
+    - [L3 L1 Lab 1](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M3/L1/Lab1)
+    - [L3 L2 Lab 2](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M3/L2/Lab2)
 
 ---
 This top-level README provides an overview of the files included and discusses some of the best practices when working with the course notebooks. More specific topics are discussed in the subdirectory notebooks and READMEs.
