@@ -8,6 +8,7 @@ This repo contains the lab materials for the course. This may include assets suc
     - [Lab 1](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M1/L1/Lab1)
 
 
+---
 This top-level README provides an overview of the files included and discusses some of the best practices when working with the course notebooks. More specific topics are discussed in the subdirectory notebooks and READMEs.
 
 ## DLAI Table of Contents
