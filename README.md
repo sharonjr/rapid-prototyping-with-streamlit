@@ -1,11 +1,16 @@
 # Rapid Prototyping of Generative AI Apps with Streamlit
 
-This repo contains the standard template for creating our course repos. Aside from the layout, it also contains assignment templates, READMEs, and other files that will help organize our course materials. 
+This repo contains the lab materials for the course. This may include assets such as data, code scripts and Jupyter notebooks.
+
+## Table of Contents
+- Module 1
+  - Lesson 1
+    - [Lab 1](https://github.com/https-deeplearning-ai/rap_streamlit/tree/master/M1/L1/Lab1)
+
 
 This top-level README provides an overview of the files included and discusses some of the best practices when working with the course notebooks. More specific topics are discussed in the subdirectory notebooks and READMEs.
 
-
-## Table of Contents
+## DLAI Table of Contents
 
 - [1. Directory Structure](#1)
   - [1.1 Single assignment per week](#1-1)
