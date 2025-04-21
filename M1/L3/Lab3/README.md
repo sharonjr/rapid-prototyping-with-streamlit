@@ -1,8 +1,6 @@
 # M1 L3 Lab 3
 
-In this lab, we'll build a simple Gen AI app using LLM models from Snowflake Cortex.
-
-We'll start off with a simple app with as minimal number of lines. Next, we'll expand the app with additional features in our iterations as also reflected in the in-line commented code.
+In this lab, we'll build the dashboard app of the Avalanche customer review data.
 
 
 ## Creating this Streamlit App in Snowflake
