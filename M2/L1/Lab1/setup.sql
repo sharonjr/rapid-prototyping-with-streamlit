@@ -10,7 +10,7 @@ CREATE OR REPLACE STAGE customer_reviews
 
 -- Option 2: Manual upload to Stage
 -- Create the stage for storing our files
--- Uncomment code block below for this option
+-- Uncomment code block below for this option:
 --
 --CREATE STAGE IF NOT EXISTS avalanche.customer_reviews
   --ENCRYPTION = (TYPE = 'SNOWFLAKE_SSE')
