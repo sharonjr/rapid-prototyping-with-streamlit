@@ -1,144 +1,95 @@
-# M1 L3 Lab3
+# Import Python libraries
 import streamlit as st
-import altair as alt
+import datetime
+import numpy as np
 import pandas as pd
+import altair as alt
 from snowflake.snowpark.context import get_active_session
 
+# Write directly to the app
+st.title(f"🏔️ Avalanche App")
 
 # Get the current credentials
 session = get_active_session()
 
-st.set_page_config(page_title="Avalanche Data Set",
-                    page_icon="🏔️",
-                    layout="wide")
 
-st.title("🏔️ Avalanche Data Set")
+## Load data
+# Getting data into streamlit via sql to import table
+df = session.sql("SELECT * FROM AVALANCHE.PUBLIC.CUSTOMER_REVIEWS")
 
-df = session.sql("SELECT * FROM AVALANCHE.PUBLIC.CUSTOMER_REVIEWS").to_pandas()
-# df = pd.read_csv("data/customer_reviews.csv")
+# Here are different ways to display a DataFrame
+# df
+# st.dataframe(df)
 
-# Ensure SENTIMENT_SCORE is numeric
-df['SENTIMENT_SCORE'] = pd.to_numeric(df['SENTIMENT_SCORE'])
+# Figuring out the data type of a variable
+# st.write(type(df)) # Snowpark DataFrame
 
-# Convert DATE to datetime explicitly
-df['DATE'] = pd.to_datetime(df['DATE'])
+## Let's convert to a Pandas DataFrame
+# df = df.to_pandas()
+# st.dataframe(df)
 
-# Add date components
-df['DAY'] = df['DATE'].dt.day
-df['WEEK'] = df['DATE'].dt.isocalendar().week
-df['MONTH'] = df['DATE'].dt.month
-df['YEAR'] = df['DATE'].dt.year
 
-# Product sentiment score
-product_bar_chart = alt.Chart(df).mark_bar(size=15).encode(
-    y=alt.Y('PRODUCT:N',
-            axis=alt.Axis(
-                labelAngle=0,  # Horizontal labels
-                labelOverlap=False,  # Prevent label overlap
-                labelPadding=10  # Add some padding
-            )
-    ),
-    x=alt.X('mean(SENTIMENT_SCORE):Q',  # Aggregate mean sentiment score
-            title='MEAN SENTIMENT_SCORE'),
-    color=alt.condition(
-        alt.datum.mean_SENTIMENT_SCORE >= 0,
-        alt.value('#2ecc71'),  # green for positive
-        alt.value('#e74c3c')   # red for negative
-    ),
-    tooltip=['PRODUCT:N', 'mean(SENTIMENT_SCORE):Q']
-).properties(
-    height=400
-)
+## Missing data
+# Since our data is clean, let's introduce some missing values
+# df_with_missing = df.where(np.random.choice([True, False], size=df.shape, p=[1 - 0.05, 0.05]))
+# st.dataframe(df_with_missing)
 
-# Create tabs
-tab = st.tabs(['Daily / Weekly / Monthly', 'Product', 'Data'])
+# Let's see the missing values
+# st.write(df.isna())
+# st.write(df_with_missing.isna())
+# st.dataFrame(df_with_missing.dropna())
 
-# Display the chart
-with tab[0]:
-    st.subheader('Sentiment score analysis')
 
-    # Add time period selection
-    time_period = st.selectbox(
-        "Select time period",
-        options=["Daily", "Weekly", "Monthly"]
-    )
+# Data filtering
+# df[df.PRODUCT == 'Alpine Skis']
 
-    # Process data based on selected time period
-    if time_period == "Daily":
-        period_label = "Daily"
-        chart_data = df.copy()
-        x_encoding = alt.X('DATE:T', axis=alt.Axis(format='%Y-%m-%d', labelAngle=90))
-        tooltip_encoding = ['DATE:T', 'SENTIMENT_SCORE:Q', 'PRODUCT:N']
-        avg_sentiment = chart_data['SENTIMENT_SCORE'].mean()
-        highest_sentiment = chart_data['SENTIMENT_SCORE'].max()
-        lowest_sentiment = chart_data['SENTIMENT_SCORE'].min()
+# # Drop-down widget
+# unique_products = sorted(df.PRODUCT.unique())
+# selected_products = st.multiselect('Select product(s)', unique_products, unique_products)
+# st.write('Selected products:', list(selected_products))
+# df[df.PRODUCT.isin(selected_products)]
 
-    elif time_period == "Weekly":
-        period_label = "Weekly"
-        chart_data = df.groupby(['YEAR', 'WEEK', 'PRODUCT']).agg(
-            SENTIMENT_SCORE=('SENTIMENT_SCORE', 'mean'),
-            DATE=('DATE', 'first')
-        ).reset_index()
-        chart_data['WEEK_LABEL'] = chart_data.apply(lambda row: f"{row['YEAR']}-W{int(row['WEEK']):02d}", axis=1)
-        x_encoding = alt.X('WEEK_LABEL:N', sort=None, title='Week') # Use nominal type for explicit labels
-        tooltip_encoding = ['WEEK_LABEL:N', 'SENTIMENT_SCORE:Q', 'PRODUCT:N']
-        avg_sentiment = chart_data['SENTIMENT_SCORE'].mean()
-        highest_sentiment = chart_data['SENTIMENT_SCORE'].max()
-        lowest_sentiment = chart_data['SENTIMENT_SCORE'].min()
 
-    else:  # Monthly
-        period_label = "Monthly"
-        chart_data = df.groupby(['YEAR', 'MONTH', 'PRODUCT']).agg(
-            SENTIMENT_SCORE=('SENTIMENT_SCORE', 'mean'),
-            DATE=('DATE', 'first')
-        ).reset_index()
-        chart_data['MONTH_LABEL'] = chart_data.apply(lambda row: f"{row['YEAR']}-{row['MONTH']:02d}", axis=1)
-        x_encoding = alt.X('MONTH_LABEL:N', sort=None, title='Month') # Use nominal type for explicit labels
-        tooltip_encoding = ['MONTH_LABEL:N', 'SENTIMENT_SCORE:Q', 'PRODUCT:N']
-        avg_sentiment = chart_data['SENTIMENT_SCORE'].mean()
-        highest_sentiment = chart_data['SENTIMENT_SCORE'].max()
-        lowest_sentiment = chart_data['SENTIMENT_SCORE'].min()
+# # Calendar widget
+# st.subheader('Dates')
 
-    # Display metrics
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric(
-            label=f"{period_label} Average Sentiment",
-            value=f"{avg_sentiment:.2f}" if 'avg_sentiment' in locals() else "N/A",
-        )
+# df['DATE'] = pd.to_datetime(df['DATE'])
 
-    with col2:
-        st.metric(
-            label=f"{period_label} Highest Sentiment",
-            value=f"{highest_sentiment:.2f}" if 'highest_sentiment' in locals() else "N/A",
-        )
+# d = st.date_input(
+#     "Select dates",
+#     (df['DATE'].min().date(), df['DATE'].median().date() ),
+#     df['DATE'].min().date(),
+#     df['DATE'].max().date(),
+# )
 
-    with col3:
-        st.metric(
-            label=f"{period_label} Lowest Sentiment",
-            value=f"{lowest_sentiment:.2f}" if 'lowest_sentiment' in locals() else "N/A",
-        )
+# # Check if both dates are specified
+# if len(d)==2:
+#     start_date = pd.to_datetime(d[0])
+#     end_date = pd.to_datetime(d[1])
 
-    # Update chart based on selected period
-    sentiment_chart = alt.Chart(chart_data).mark_bar(size=15).encode(
-        x=x_encoding,
-        y=alt.Y('SENTIMENT_SCORE:Q'),
-        color=alt.condition(
-            alt.datum.SENTIMENT_SCORE >= 0,
-            alt.value('#2ecc71'),  # green for positive
-            alt.value('#e74c3c')   # red for negative
-        ),
-        tooltip=tooltip_encoding
-    ).properties(
-        height=400
-    )
+#     st.write('Selected dates:', start_date, end_date)
+    
+#     df_filtered = df[ (df['DATE'] >= start_date) & (df['DATE'] <= end_date) ]
+#     df_filtered
 
-    st.altair_chart(sentiment_chart, use_container_width=True)
 
-with tab[1]:
-    st.subheader('Product sentiment score')
-    st.altair_chart(product_bar_chart, use_container_width=True)
-
-with tab[2]:
-    st.subheader('Prepared Data set')
-    st.dataframe(df)
+#     ## Data visualization
+#     st.subheader('Data visualization')
+    
+#     x_encoding = alt.X('DATE:T', axis=alt.Axis(format='%Y-%m-%d', labelAngle=90))
+#     tooltip_encoding = ['DATE:T', 'SENTIMENT_SCORE:Q', 'PRODUCT:N']
+    
+#     sentiment_chart = alt.Chart(df_filtered).mark_bar(size=15).encode(
+#         x=x_encoding,
+#         y=alt.Y('SENTIMENT_SCORE:Q'),
+#         color=alt.condition(
+#             alt.datum.SENTIMENT_SCORE >= 0,
+#             alt.value('#2ecc71'),  # green for positive
+#             alt.value('#e74c3c')   # red for negative
+#         ),
+#         tooltip=tooltip_encoding
+#     ).properties(
+#         height=400
+#     )
+    
+#     st.altair_chart(sentiment_chart, use_container_width=True)
