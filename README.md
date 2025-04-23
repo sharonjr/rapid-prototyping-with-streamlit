@@ -1,6 +1,6 @@
 # Rapid Prototyping of Generative AI Apps with Streamlit
 
-This repo contains the lab materials for the course. This includes assets such as data, code scripts and Jupyter notebooks.
+This repo contains the lab materials for the course. This includes assets such as data, code scripts, Jupyter notebooks and Streamlit apps.
 
 ## Table of Contents
 - **Module 1** - Introduction
