@@ -8,7 +8,7 @@ Here are 2 parameters that we'll tweak:
 - *chunk size*
 - *chunk overlap*
 
-which are both set to 1800 and 250, respectively.
+which are set to 1800 and 250, respectively.
 
 ## Creating this Streamlit App in Snowflake
 - **Step 1.** Log in to Snowflake Snowsight
