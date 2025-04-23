@@ -1,4 +1,4 @@
-# M1 L3 Lab 3
+# M1 Lab 3
 
 In this lab, we'll build the dashboard app of the Avalanche customer review data.
 
