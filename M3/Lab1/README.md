@@ -1,4 +1,4 @@
-# M2 Lab 2
+# M3 Lab 1
 
 In this lab, we'll build a chatbot to answer questions about structured data using advanced prompting.
 
