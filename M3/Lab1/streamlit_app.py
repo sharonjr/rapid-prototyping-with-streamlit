@@ -1,4 +1,4 @@
-# M2 L2 Lab 2
+# M3 Lab 1
 import streamlit as st
 import pandas as pd
 from snowflake.snowpark.context import get_active_session
@@ -29,7 +29,6 @@ def initialize_session_state():
         st.session_state.use_chat_history = True
     if "debug" not in st.session_state:
          st.session_state.debug = False
-
 
 # --- UI Setup ---
 def setup_sidebar():
