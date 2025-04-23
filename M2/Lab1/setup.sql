@@ -19,7 +19,7 @@ CREATE STAGE IF NOT EXISTS avalanche_db.avalanche_schema.customer_reviews
 -- Uncomment lines below to use:
 --
 -- Create the stage for storing our files
--- CREATE OR REPLACE STAGE customer_reviews
+-- CREATE OR REPLACE STAGE avalanche_db.avalanche_schema.customer_reviews
    -- URL = 's3://sfquickstarts/misc/customer_reviews/'
    -- DIRECTORY = (ENABLE = TRUE AUTO_REFRESH = TRUE);
 
