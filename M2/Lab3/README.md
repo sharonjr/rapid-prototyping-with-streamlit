@@ -1,4 +1,4 @@
-# M2 Lab3
+# M2 Lab 3
 
 In this lab, we're setting up the RAG pipeline using Cortex Search.
 
