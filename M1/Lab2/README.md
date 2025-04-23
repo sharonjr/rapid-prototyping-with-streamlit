@@ -1,4 +1,4 @@
-# M1 L2 Lab 2 - Build a simple Streamlit app
+# M1 Lab 2 - Build a simple Streamlit app
 
 In this lab, we'll take our first step towards building a Streamlit app for our capstone project which is building a dashboard app for the Avalanche data set.
 
