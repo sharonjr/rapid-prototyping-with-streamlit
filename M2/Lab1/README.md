@@ -11,7 +11,7 @@ Once this is completed, the Avalanche data can be accessed from the `@avalanche_
 
 For example, to list contents of the stage run this SQL query:
 ```sql
-ls @avalanche.customer_reviews;
+ls @avalanche_db.avalanche_schema.customer_reviews;
 ```
 
 To read contents of a file:
