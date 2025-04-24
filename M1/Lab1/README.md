@@ -5,5 +5,5 @@ In this first lab, you'll interact with the final demo app that we'll build out 
 🕹️ The **App** is accessible at: [https://avalanche.streamlit.app](https://avalanche.streamlit.app)
 
 🐙 The **Code** repo for the app is available at: 
-- [https://github.com/https-deeplearning-ai/rapid-prototyping-with-streamlit/tree/master/M3/L2/Lab2](https://github.com/https-deeplearning-ai/rapid-prototyping-with-streamlit/tree/master/M3/L2/Lab2)
+- [https://github.com/https-deeplearning-ai/rapid-prototyping-with-streamlit/tree/master/Avalanche](https://github.com/https-deeplearning-ai/rapid-prototyping-with-streamlit/tree/master/Avalanche)
 - [https://github.com/sfc-gh-cnantasenamat/avalanche/](https://github.com/sfc-gh-cnantasenamat/avalanche/)
