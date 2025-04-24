@@ -1,6 +1,6 @@
 # M2 Lab 1
 
-In this lab, we'll prepare the Avalanche data namely the Customer Reviews subset from an unstructured format to a structured format in a Snowflake Notebooks.
+In this lab, we'll prepare the Avalanche data namely the Customer Reviews subset from an unstructured format to a structured format in Snowflake Notebooks.
 
 ## Setup
 
