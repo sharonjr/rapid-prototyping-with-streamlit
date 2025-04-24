@@ -39,4 +39,4 @@ Next, we'll use the structured data to create a bar chart to visualize the daily
 
 ## Running the Notebook
 
-Download the Notebook in `IPYNB` format (`customer-review.ipynb`) and upload it to your Snowflake Snowsight account to run the Snowflake Notebook.
+Download the Notebook in `IPYNB` format (`customer-reviews.ipynb`) and upload it to your Snowflake Snowsight account to run the Snowflake Notebook.
