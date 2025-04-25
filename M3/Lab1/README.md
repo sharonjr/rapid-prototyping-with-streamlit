@@ -6,11 +6,11 @@ You can think of this as a RAG chatbot over structured data; with the caveat tha
 
 ## Setup
 
-We've exported the processed data from M2 Lab 1 and loaded that into a new table `AVALANCHE_DB.PUBLIC.CUSTOMER_REVIEWS` that we'll use in this lab. 
+In M2 Lab 1, we've exported the processed Avalanche structured data, which we'll need in this lab. As we had already uploaded this processed CSV data (using a previously prepared data) into Snowflake in M1 Lab 3 at `AVALANCHE_DB.PUBLIC.CUSTOMER_REVIEWS` we can now readily use it.
 
 ## Augmenting our Prompt with Data
 
-We're converting a Pandas DataFrame into strings by appending the `.to_string()` method to the DataFrame variable. 
+After reading in the CSV data into a Pandas DataFrame, we're converting it into strings by appending the `.to_string()` method to the DataFrame variable. 
 
 The resulting string is represented by `{dataframe_context}` that is then added to `<context></context>`.
 
