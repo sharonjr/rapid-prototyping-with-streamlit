@@ -6,7 +6,7 @@ You can think of this as a RAG chatbot over structured data; with the caveat tha
 
 ## Setup
 
-We'll export the processed data from M2 L1 Lab 1 and load that into a new table `AVALANCHE.PUBLIC.CUSTOMER_REVIEWS` that we'll use in this lab.
+We'll export the processed data from M2 Lab 1 and load that into a new table `AVALANCHE_DB.PUBLIC.CUSTOMER_REVIEWS` that we'll use in this lab. 
 
 ## Augmenting our Prompt with Data
 
