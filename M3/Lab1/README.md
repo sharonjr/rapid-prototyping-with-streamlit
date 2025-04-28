@@ -6,7 +6,9 @@ You can think of this as a RAG chatbot over structured data; with the caveat tha
 
 ## Setup
 
-In M2 Lab 1, we've exported the processed Avalanche structured data, which we'll need in this lab. As we had already uploaded this processed CSV data (using a previously prepared data) into Snowflake in M1 Lab 3 at `AVALANCHE_DB.PUBLIC.CUSTOMER_REVIEWS` we can now readily use it.
+In M2 Lab 1, we've transformed the unstructured data (collection of DOCX files) to a structured, tabular form and concluded the lab by exporting the CSV data, which we'll need in this lab. It is this processed CSV data that we used in M1 Lab 3 to upload to Snowflake at `AVALANCHE_DB.PUBLIC.CUSTOMER_REVIEWS`.
+
+Thus, there is no further steps to do here and we'll use it for this lab.
 
 ## Augmenting our Prompt with Data
 
