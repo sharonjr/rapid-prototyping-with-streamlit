@@ -1,20 +1,33 @@
-# M3 Lab 1
+# M3 Lab 1 Using Data Augmentation to Build a Simple Chatbot
 
-In this lab, we'll build a chatbot to answer questions about structured data using advanced prompting.
+In Module 3 Lab 1, we'll start this lab with the prototype we built in Module 2, where we have already created and deployed a prototype that performs sentiment analysis and can visualize the results grouped by time period and product
 
-You can think of this as a RAG chatbot over structured data; with the caveat that we're not using vector embeddings and vector databases; instead we're applying the string version of the DataFrame as context directly in the prompt.
+
+You can think of this method as building an augmented chatbot on structured data; we're applying the string version of the DataFrame as context directly into the prompt.
 
 ## Setup
 
-In M2 Lab 1, we've transformed the unstructured data (collection of DOCX files) to a structured, tabular form and concluded the lab by exporting the CSV data, which we'll need in this lab. It is this processed CSV data that we used in M1 Lab 3 to upload to Snowflake at `AVALANCHE_DB.PUBLIC.CUSTOMER_REVIEWS`.
+1. Log in to Snowflake Snowsight
+2. In the left sidebar, click on "Projects" > "Streamlit" to bring up the Streamlit workspace
+3. In the top-right corner, click on "+ Streamlit App" to create a Streamlit app
+    - Give your app a title
+    - Choose the avalanche database and schema that you created in module 2
+    - Keep all other settings at default and click on “Create”
+4. An example Streamlit app should appear- delete all the existing code from the example app
+5. Copy the code from the streamlit_app.py file on our repo:
+https://github.com/https-deeplearning-ai/rapid-prototyping-with-streamlit/blob/master/M1/Lab3/streamlit_app.py
+6. Paste the streamlit_app.py code into the left code of the Snowflake Streamlit editor panel
+7. Click on Run to spin up the app. 
 
-Thus, there is no further steps to do here and we'll use it for this lab.
+The lab video will walk you through the code in more detail. 
 
 ## Augmenting our Prompt with Data
 
-After reading in the CSV data into a Pandas DataFrame, we're converting it into strings by appending the `.to_string()` method to the DataFrame variable. 
+The rest of this lab will focus on how we can add additional context to our prompt in order to assist our chatbot in returning better results. 
 
-The resulting string is represented by `{dataframe_context}` that is then added to `<context></context>`.
+Since we’re building an app around the Avalanche Dataset, one of the easiest things we can do to augment our prompt is to provide the entire dataset as context to our prompts. However, it would be really clunky to copy and paste an entire dataframe, we’ll use code to help create additional context for our prompt. 
+
+In the first part of the lab, we walked through the section of code that reads in our customer reviews as a pandas dataframe. We then converted it to a string and stored the output in a variable named dataframe_context that we can feed to our prompt in a prompt section titled “context”. 
 
 Here's the prompt:
 ```
@@ -40,24 +53,3 @@ or chat history, answer naturally. Do not explicitly mention "based on the conte
 [/INST]
 Answer:
 ```
-
-## Creating this Streamlit App in Snowflake
-- **Step 1.** Log in to Snowflake Snowsight
-
-Approach 1:
-
-- **Step 2A.** In the left sidebar, click on "Projects" > "Streamlit" to bring up the Streamlit workspace
-- **Step 2B.** In the top-right corner, click on "+ Streamlit App" to create a Streamlit app.
-
-Approach 2:
-
-- **Step 2.** In the left sidebar, click on + "Create" > "Streamlit App"
-
-- **Step 3.** A "Create Streamlit App" modal window pops up. Enter the following:
-
-  - App title
-  - App location: choose database and choose schema
-  - App warehouse
-
-- **Step 4.** An example Streamlit app should appear
-- **Step 5.** Paste the code content from the `streamlit_app.py` in this sub-directory into the left code editor panel.
