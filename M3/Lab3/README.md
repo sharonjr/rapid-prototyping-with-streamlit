@@ -11,22 +11,19 @@ Here are 2 parameters that we'll tweak:
 which are set to 1800 and 250, respectively.
 
 ## Creating this Streamlit App in Snowflake
-- **Step 1.** Log in to Snowflake Snowsight
+1. Log in to Snowflake Snowsight
+2. In the left sidebar, click on "Projects" > "Streamlit" to bring up the Streamlit workspace
+3. In the top-right corner, click on "+ Streamlit App" to create a Streamlit app
+4. Give your app a title
+5. Choose the avalanche database and schema that you created in module 2
+6. Keep all other settings at default and click on “Create”
+7. An example Streamlit app should appear- delete all the existing code from the example app
+8. Copy the code from the streamlit_app.py file on our repo:
+https://github.com/https-deeplearning-ai/rapid-prototyping-with-streamlit/blob/master/M3/Lab3/streamlit_app.py
+9. Paste the streamlit_app.py code into the left code of the Snowflake Streamlit editor panel
+10. Click on Run to spin up the app
 
-Approach 1:
+Follow along with the video for the rest. 
 
-- **Step 2A.** In the left sidebar, click on "Projects" > "Streamlit" to bring up the Streamlit workspace
-- **Step 2B.** In the top-right corner, click on "+ Streamlit App" to create a Streamlit app.
 
-Approach 2:
 
-- **Step 2.** In the left sidebar, click on + "Create" > "Streamlit App"
-
-- **Step 3.** A "Create Streamlit App" modal window pops up. Enter the following:
-
-  - App title
-  - App location: choose database and choose schema
-  - App warehouse
-
-- **Step 4.** An example Streamlit app should appear
-- **Step 5.** Paste the code content from the `streamlit_app.py` in this sub-directory into the left code editor panel.
