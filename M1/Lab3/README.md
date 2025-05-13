@@ -4,7 +4,7 @@ In this third lab, we'll build the dashboard of the Avalanche customer review da
 
 ## Creating this Streamlit App in Snowflake
 - **Step 1.** Download the file called streamlit_app.py from this folder in the course Github Repo.
-- **Step 2.** After enrolling in your [https://signup.snowflake.com/?trial=student&cloud=aws&region=us-west-2](free Snowflake trial account), log in to Snowflake Snowsight
+- **Step 2.** After enrolling in your (free Snowflake trial account)[https://signup.snowflake.com/?trial=student&cloud=aws&region=us-west-2], log in to Snowflake Snowsight
 
 Approach 1:
 
