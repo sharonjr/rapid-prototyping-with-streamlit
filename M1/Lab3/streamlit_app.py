@@ -15,7 +15,7 @@ session = get_active_session()
 
 ## Load data
 # Getting data into streamlit via sql to import table
-df = session.sql("SELECT * FROM AVALANCHE.PUBLIC.CUSTOMER_REVIEWS")
+df = session.sql("SELECT * FROM AVALANCHE_DB.PUBLIC.CUSTOMER_REVIEWS")
 
 # Here are different ways to display a DataFrame
 # df
