@@ -1,6 +1,31 @@
-# M2 Lab 3 Deploying to Streamlit Community Cloud
+# M2 Lab 4 Deploying to Streamlit Community Cloud using Snowflake Data
 
-In Module 2 Lab 3, you'll deploy the Streamlit app you have previously built and deployed on the Snowflake platform onto the [Streamlit Community Cloud](https://streamlit.io/cloud).
+In Module 2 Lab 4, you'll deploy the Streamlit app to the [Streamlit Community Cloud](https://streamlit.io/cloud) and this time we'll be able to access Snowflake data directly from the app. 
+
+You'll essentially follow the same steps as in the previous lab (M2 Lab 3) but with minor modifications:
+1. In `requirements.txt` have the following:
+```
+streamlit[snowflake]
+snowflake-snowpark-python
+altair
+pandas
+```
+2. Using the `st.connection()` method to connect to Snowflake and query the Snowflake data. So this involves a one-line modification of the `streamlit_app.py` file:
+```
+df = st.connection("snowflake").query("SELECT * FROM avalanche_db.public.customer_reviews;")
+```
+3. Add Snowflake credentials to the in-app secrets management, which looks like the following:
+```
+[connections.snowflake]
+account = "xxxxxxx-xxxxxxxx"
+user = "your_username"
+password = "xxxxxxxxxx"
+role = "ACCOUNTADMIN"
+warehouse = "COMPUTE_WH"
+database = "AVALANCHE_DB"
+schema = "PUBLIC"
+```
+
 
 **Before attempting to deploy your app to the cloud, make sure you have completed the steps in Module 2 Lab 1 and Module 2 Lab 2.**
 
