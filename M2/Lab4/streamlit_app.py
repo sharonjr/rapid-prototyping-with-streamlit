@@ -1,4 +1,4 @@
-# M2 Lab 3
+# M2 Lab 4
 import streamlit as st
 import altair as alt
 import pandas as pd
@@ -13,8 +13,10 @@ st.set_page_config(page_title="Avalanche Data Set",
 
 st.title("🏔️ Avalanche Data Set")
 
+# Connect to Snowflake
+df = st.connection("snowflake").query("SELECT * FROM avalanche_db.public.customer_reviews;")
 # df = session.sql("SELECT * FROM AVALANCHE.PUBLIC.CUSTOMER_REVIEWS").to_pandas()
-df = pd.read_csv("data/customer_reviews.csv")
+# df = pd.read_csv("data/customer_reviews.csv")
 
 # Ensure SENTIMENT_SCORE is numeric
 df['SENTIMENT_SCORE'] = pd.to_numeric(df['SENTIMENT_SCORE'])
