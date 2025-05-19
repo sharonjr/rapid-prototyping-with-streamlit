@@ -14,7 +14,32 @@ st.set_page_config(page_title="Avalanche Data Set",
 st.title("🏔️ Avalanche Data Set")
 
 # df = session.sql("SELECT * FROM AVALANCHE.PUBLIC.CUSTOMER_REVIEWS").to_pandas()
-df = pd.read_csv("data/customer_reviews.csv")
+#df = pd.read_csv("data/customer_reviews.csv")
+
+# Define paths to look for the data file
+possible_paths = [
+    "data/customer_reviews.csv",  # Original path
+    "./data/customer_reviews.csv",  # Explicit relative path
+    "../data/customer_reviews.csv",  # One level up
+    "customer_reviews.csv",  # Directly in the same folder
+]
+
+# Try to load the data from one of the possible paths
+data_loaded = False
+for path in possible_paths:
+    try:
+        if os.path.exists(path):
+            df = pd.read_csv(path)
+            st.success(f"Data loaded successfully from {path}")
+            data_loaded = True
+            break
+    except Exception as e:
+        continue
+
+# If data couldn't be loaded from any path, show an error
+if not data_loaded:
+    st.error("Could not find the customer_reviews.csv file. Please make sure it's uploaded correctly.")
+    st.stop()  # Stop the app from continuing
 
 # Ensure SENTIMENT_SCORE is numeric
 df['SENTIMENT_SCORE'] = pd.to_numeric(df['SENTIMENT_SCORE'])
